@@ -1,8 +1,10 @@
-﻿using DockerTutorialConsole.Extensions;
+﻿using DockerTutorialConsole;
+using DockerTutorialConsole.Extensions;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-using IHost host = Host.CreateDefaultBuilder(args)
+await Host.CreateDefaultBuilder(args)
     .ConfigureAppConfiguration((context, builder) =>
     {
         builder
@@ -12,10 +14,8 @@ using IHost host = Host.CreateDefaultBuilder(args)
     })
     .ConfigureServices((context, services) =>
     {
+        services.AddHostedService<ConsoleService>();
         Dependencies.ConfigureServices(context.Configuration, services);
     })
-    .Build();
-
-// Application code should start here.
-
-await host.RunAsync();
+    .Build()
+    .RunAsync();

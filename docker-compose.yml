@@ -6,3 +6,6 @@ services:
     build:
       context: .
       dockerfile: DockerTutorialConsole/Dockerfile
+  database:
+    image: mongo
+    restart: always

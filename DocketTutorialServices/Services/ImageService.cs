@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DocketTutorialServices.Storage
+namespace DocketTutorialServices.Services
 {
-    public class MongoStorage
+    public class ImageService
     {
     }
 }
