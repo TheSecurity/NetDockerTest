@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  dockertutorialconsole:
+    image: ${DOCKER_REGISTRY-}dockertutorialconsole
+    build:
+      context: .
+      dockerfile: DockerTutorialConsole/Dockerfile
