@@ -27,6 +27,8 @@ namespace DocketTutorialServices.Services
         public async Task GetDataAsync()
         {
             var result = await _userData.GetUsersAsync();
+
+            Console.WriteLine("Users count: " + result.Count());
         }
     }
 }
