@@ -3,9 +3,15 @@ version: '3.4'
 services:
   dockertutorialconsole:
     image: ${DOCKER_REGISTRY-}dockertutorialconsole
+    container_name: "dockertutorial"
     build:
       context: .
       dockerfile: DockerTutorialConsole/Dockerfile
   database:
     image: mongo
     restart: always
+    container_name: "mongo"
+  browserless:
+    image: browserless/chrome
+    restart: always
+    container_name: "browserless"    
